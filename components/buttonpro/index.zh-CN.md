@@ -1,8 +1,9 @@
 ---
+order: 0
 category: Components
 type: 通用
 cols: 1
-title: ButtonPlus
+title: ButtonPro
 subtitle: 按钮
 ---
 

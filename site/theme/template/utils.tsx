@@ -26,7 +26,7 @@ export function getMenuItems(
   typeOrder: Orders,
 ) {
   const menuMeta = moduleData.map(item => item.meta).filter(meta => !meta.skip);
-
+ 
   const menuItems: Meta[] = [];
   const sortFn = (a: Meta, b: Meta) => (a.order || 0) - (b.order || 0);
   menuMeta.sort(sortFn).forEach(meta => {

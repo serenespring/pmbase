@@ -1,6 +1,6 @@
 {
   "name": "xmzbase",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "base on antd component",
   "keywords": [
     "antd",
@@ -10,7 +10,7 @@
   "author": "serenespring",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/basecomponent/xmzbase.git"
+    "url": "git+https://github.com/serenespring/xmzbase.git"
   },
   "license": "ISC",
   "files": [
@@ -103,6 +103,8 @@
     "array-tree-filter": "^2.1.0",
     "classnames": "^2.2.6",
     "copy-to-clipboard": "^3.2.0",
+    "echarts": "^5.2.2",
+    "echarts-for-react": "^3.0.2",
     "lodash": "^4.17.21",
     "memoize-one": "^6.0.0",
     "moment": "^2.25.3",
@@ -137,7 +139,8 @@
     "rc-trigger": "^5.2.10",
     "rc-upload": "~4.3.0",
     "rc-util": "^5.14.0",
-    "scroll-into-view-if-needed": "^2.2.25"
+    "scroll-into-view-if-needed": "^2.2.25",
+    "tslib": "2.3.0"
   },
   "devDependencies": {
     "@ant-design/bisheng-plugin": "^3.0.1",
@@ -303,9 +306,9 @@
     "mode": "npm"
   },
   "bugs": {
-    "url": "https://github.com/basecomponent/xmzbase/issues"
+    "url": "https://github.com/serenespring/xmzbase/issues"
   },
-  "homepage": "https://github.com/basecomponent/xmzbase#readme",
+  "homepage": "https://github.com/serenespring/xmzbase#readme",
   "directories": {
     "doc": "docs",
     "lib": "lib",

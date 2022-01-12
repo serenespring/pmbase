@@ -250,7 +250,7 @@ export default class Layout extends React.Component {
               locale={appLocale.locale === 'zh-CN' ? zhCN : null}
               direction={direction}
             >
-              {/* <Header {...restProps} changeDirection={this.changeDirection} /> */}
+              <Header {...restProps} changeDirection={this.changeDirection} />
               {children}
             </ConfigProvider>
           </IntlProvider>

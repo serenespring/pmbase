@@ -8,7 +8,7 @@ title:
 ## zh-CN
 
 - 在antd.Button组件基础上封装, type属性值增加`delete`, 删除按钮弹窗确认框
-- 兼容antd.Button组件
+- 兼容[antd.Button](https://ant.design/components/button-cn/)组件
 
 ## en-US
 

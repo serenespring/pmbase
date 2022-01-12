@@ -35,39 +35,40 @@ export interface HeaderProps {
 }
 
 let docsearch: any;
-const triggerDocSearchImport = () => {
-  if (docsearch) {
-    return Promise.resolve();
-  }
+// const triggerDocSearchImport = () => {
+//   if (docsearch) {
+//     return Promise.resolve();
+//   }
 
-  return import('docsearch.js').then(ds => {
-    docsearch = ds.default;
-  });
-};
+//   return import('docsearch.js').then(ds => {
+//     docsearch = ds.default;
+//   });
+// };
 
 function initDocSearch({ isZhCN, router }: { isZhCN: boolean; router: any }) {
   if (!canUseDom()) {
     return;
   }
 
-  triggerDocSearchImport().then(() => {
-    docsearch({
-      appId: AlgoliaConfig.appId,
-      apiKey: AlgoliaConfig.apiKey,
-      indexName: AlgoliaConfig.indexName,
-      inputSelector: '#search-box input',
-      algoliaOptions: AlgoliaConfig.getSearchParams(isZhCN),
-      transformData: AlgoliaConfig.transformData,
-      debug: AlgoliaConfig.debug,
-      // https://docsearch.algolia.com/docs/behavior#handleselected
-      handleSelected: (input: any, _$1: unknown, suggestion: any) => {
-        router.push(suggestion.url);
-        setTimeout(() => {
-          input.setVal('');
-        });
-      },
-    });
-  });
+  // triggerDocSearchImport().then(() => {
+  //   docsearch({
+  //     appId: AlgoliaConfig.appId,
+  //     apiKey: AlgoliaConfig.apiKey,
+  //     indexName: AlgoliaConfig.indexName,
+  //     // inputSelector: '#search-box input',
+  //     inputSelector: '',
+  //     algoliaOptions: AlgoliaConfig.getSearchParams(isZhCN),
+  //     transformData: AlgoliaConfig.transformData,
+  //     debug: AlgoliaConfig.debug,
+  //     // https://docsearch.algolia.com/docs/behavior#handleselected
+  //     handleSelected: (input: any, _$1: unknown, suggestion: any) => {
+  //       router.push(suggestion.url);
+  //       setTimeout(() => {
+  //         input.setVal('');
+  //       });
+  //     },
+  //   });
+  // });
 }
 
 interface HeaderState {
@@ -268,35 +269,36 @@ class Header extends React.Component<HeaderProps, HeaderState> {
 
           let menu: (React.ReactElement | null)[] = [
             navigationNode,
-            <Select
-              key="version"
-              className="version"
-              size="small"
-              defaultValue={antdVersion}
-              onChange={this.handleVersionChange}
-              dropdownStyle={this.getDropdownStyle()}
-              getPopupContainer={trigger => trigger.parentNode}
-            >
-              {versionOptions}
-            </Select>,
-            <Button
-              size="small"
-              onClick={this.onLangChange}
-              className="header-button header-lang-button"
-              key="lang-button"
-            >
-              <FormattedMessage id="app.header.lang" />
-            </Button>,
-            <Button
-              size="small"
-              onClick={this.onDirectionChange}
-              className="header-button header-direction-button"
-              key="direction-button"
-            >
-              {this.getNextDirectionText()}
-            </Button>,
-            <More key="more" {...sharedProps} />,
-            <Github key="github" responsive={responsive} />,
+            // <Select
+            //   key="version"
+            //   className="version"
+            //   size="small"
+            //   defaultValue={antdVersion}
+            //   onChange={this.handleVersionChange}
+            //   dropdownStyle={this.getDropdownStyle()}
+            //   getPopupContainer={trigger => trigger.parentNode}
+            // >
+            //   {versionOptions}
+            // </Select>,
+            // <Button
+            //   size="small"
+            //   onClick={this.onLangChange}
+            //   className="header-button header-lang-button"
+            //   key="lang-button"
+            // >
+            //   <FormattedMessage id="app.header.lang" />
+            // </Button>,
+            // <Button
+            //   size="small"
+            //   onClick={this.onDirectionChange}
+            //   className="header-button header-direction-button"
+            //   key="direction-button"
+            // >
+            //   {this.getNextDirectionText()}
+            // </Button>,
+            // <More key="more" {...sharedProps} />,
+            // <Github key="github" responsive={responsive} />,
+            <a href="https://github.com/serenespring/xmzbase.git" target="_blank" rel="noopener noreferrer">GitHub</a>
           ];
 
           if (windowWidth < RESPONSIVE_XS) {
@@ -343,17 +345,20 @@ class Header extends React.Component<HeaderProps, HeaderState> {
               )}
               <Row style={{ flexFlow: 'nowrap', height: 64 }}>
                 <Col {...colProps[0]}>
-                  <Logo {...sharedProps} location={location} />
+                  {/* <Logo {...sharedProps} location={location} /> */}
                 </Col>
+                <Col {...colProps[0]}/>
+                <Col {...colProps[0]}/>
+                <Col {...colProps[0]}/>
                 <Col {...colProps[1]} className="menu-row">
-                  <SearchBar
+                  {/* <SearchBar
                     key="search"
                     {...sharedProps}
                     router={router}
                     algoliaConfig={AlgoliaConfig}
                     responsive={responsive}
                     onTriggerFocus={this.onTriggerSearching}
-                  />
+                  /> */}
                   {!isMobile && menu}
                 </Col>
               </Row>

@@ -134,6 +134,36 @@ const webpackVariableConfig = injectLessVariables(getWebpackConfig(false), {
 
 webpackConfig.forEach(config => {
   injectWarningCondition(config);
+  // config.resolve.alias = {
+  //   tslib: path.resolve(__dirname, './node_modules/tslib'),
+  // };
+  config.plugins.push(
+    new DuplicatePackageCheckerPlugin({
+      // Also show module that is requiring each duplicate package (default: false)
+      verbose: true,
+      // Emit errors instead of warnings (default: false)
+      emitError: true,
+      // Show help message if duplicate packages are found (default: true)
+      showHelp: false,
+      // Warn also if major versions differ (default: true)
+      strict: false,
+      /**
+       * Exclude instances of packages from the results. If all instances of a package are excluded,
+       * or all instances except one, then the package is no longer considered duplicated and won't
+       * be emitted as a warning/error.
+       *
+       * @param {Object} instance
+       * @param {string} instance.name The name of the package
+       * @param {string} instance.version The version of the package
+       * @param {string} instance.path Absolute path to the package
+       * @param {string | null} instance.issuer Absolute path to the module that requested the package
+       * @returns {boolean} True to exclude the instance, false otherwise
+       */
+      exclude(instance) {
+        return instance.name === 'tslib';
+      },
+    }),
+  );
 });
 
 if (process.env.RUN_ENV === 'PRODUCTION') {
