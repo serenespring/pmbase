@@ -38,7 +38,8 @@ export default ({
   const module = pathname.split('/').slice(0, -1).join('/');
   let activeMenuItem = module || 'home';
   if (location.pathname === 'changelog' || location.pathname === 'changelog-cn') {
-    activeMenuItem = 'docs/react';
+    // activeMenuItem = 'docs/react';
+    activeMenuItem = 'changelog';
   } else if (location.pathname === 'docs/resources' || location.pathname === 'docs/resources-cn') {
     activeMenuItem = 'docs/resources';
   }
@@ -87,6 +88,11 @@ export default ({
           <FormattedMessage id="app.header.menu.documentation" />
         </Link>
       </Menu.Item> */}
+      <Menu.Item key="changelog">
+        <Link to={utils.getLocalizedPathname('/changelog', isZhCN, location.query)}>
+          <FormattedMessage id="app.header.menu.changelog" />
+        </Link>
+      </Menu.Item>
       <Menu.Item key="components">
         <Link to={utils.getLocalizedPathname('/components/overview/', isZhCN, location.query)}>
           <FormattedMessage id="app.header.menu.components" />

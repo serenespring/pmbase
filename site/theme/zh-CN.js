@@ -7,6 +7,7 @@ module.exports = {
     'app.header.search': '全文本搜索...',
     'app.header.menu.documentation': '文档',
     'app.header.menu.components': '组件',
+    'app.header.menu.changelog': '日志',
     'app.header.menu.spec': '设计',
     'app.header.menu.resource': '资源',
     'app.header.menu.more': '更多',
