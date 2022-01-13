@@ -1,4 +1,4 @@
-基于antd构建的react常用组件库：xmzbase
+基于antd构建的react常用组件库：pmbase
 
 
 ### 主要目录和文件说明
@@ -17,4 +17,8 @@
 - `npm run compile` 编译生成lib和es目录
 - `npm run pub` 发布到npm库，会自动执行dist和compile命令
 - `npm run start` 启动本工程
+
+### 帮助
+
+- 引入该工程若样式出现问题，在全局样式下@import '~antd/dist/antd.css'或者在相应的文件下import 'antd/dist/antd.css'
 

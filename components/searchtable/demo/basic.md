@@ -15,8 +15,7 @@ title:
 
 ````jsx
 import React, { useState } from 'react';
-import { Button} from 'antd';
-import { SearchTable } from 'xmzbase';
+import { SearchTable } from 'pmbase';
 
 const columns = [
   {
@@ -91,8 +90,7 @@ ReactDOM.render(
 ## 可选行搜索表格
 ````jsx
 import React, { useState } from 'react';
-import { Button} from 'antd';
-import { SearchTable } from 'xmzbase';
+import { SearchTable } from 'pmbase';
 
 const columns = [
   {

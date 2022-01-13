@@ -16,8 +16,7 @@ title:
 
 ````jsx
 import React, { useState } from 'react';
-import { Button} from 'antd';
-import { SearchTable } from 'xmzbase';
+import { SearchTable } from 'pmbase';
 
 const columns = [
   {

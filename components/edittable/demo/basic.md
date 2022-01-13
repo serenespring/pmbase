@@ -12,8 +12,7 @@ title:
 ## en-US
 
 ````jsx
-import { message } from 'antd'
-import { EditTable } from 'xmzbase'
+import { EditTable } from 'pmbase'
 
 const Demo = ()=>{
   const dataSource = [

@@ -14,7 +14,7 @@ title:
 
 ````jsx
 import { message } from 'antd'
-import { ButtonPro } from 'xmzbase'
+import { ButtonPro } from 'pmbase'
 
 ReactDOM.render(
   <ButtonPro type="delete" onClick={() => message.success('删除成功')}>删除</ButtonPro>,

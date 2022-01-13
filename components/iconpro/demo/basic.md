@@ -14,7 +14,7 @@ title:
 
 ````jsx
 
-import { IconPro } from 'xmzbase'
+import { IconPro } from 'pmbase'
 
 ReactDOM.render(
   <IconPro  type="icon-xiazai" scriptUrl = '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js'/>,

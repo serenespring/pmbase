@@ -63,10 +63,10 @@ module.exports = {
   },
   webpackConfig(config) {
     config.resolve.alias = {
-      'xmzbase/lib': path.join(process.cwd(), 'components'),
-      'xmzbase/es': path.join(process.cwd(), 'components'),
+      'pmbase/lib': path.join(process.cwd(), 'components'),
+      'pmbase/es': path.join(process.cwd(), 'components'),
       // Change antd from `index.js` to `site/antd.js` to remove deps of root style
-      xmzbase: path.join(process.cwd(), 'site', 'xmzbase'),
+      pmbase: path.join(process.cwd(), 'site', 'pmbase'),
       site: path.join(process.cwd(), 'site'),
       'react-router': 'react-router/umd/ReactRouter',
     };

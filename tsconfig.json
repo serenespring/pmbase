@@ -2,8 +2,8 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "xmzbase": ["components/index.tsx"],
-      "xmzbase/es/*": ["components/*"]
+      "pmbase": ["components/index.tsx"],
+      "pmbase/es/*": ["components/*"]
     },
     "strictNullChecks": true,
     "module": "esnext",

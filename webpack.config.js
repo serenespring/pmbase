@@ -43,8 +43,8 @@ function ignoreMomentLocale(webpackConfig) {
 }
 
 function addLocales(webpackConfig) {
-  let packageName = 'xmzbase-with-locales';
-  if (webpackConfig.entry['xmzbase.min']) {
+  let packageName = 'pmbase-with-locales';
+  if (webpackConfig.entry['pmbase.min']) {
     packageName += '.min';
   }
   webpackConfig.entry[packageName] = './index-with-locales.js';
@@ -96,7 +96,7 @@ function processWebpackThemeConfig(themeConfig, theme, vars) {
         console.log(chalk.red('🆘 Seems entry has changed! It should be `./index`'));
       }
 
-      config.entry[entryName.replace('xmzbase', `xmzbase.${theme}`)] = replacedPath;
+      config.entry[entryName.replace('pmbase', `pmbase.${theme}`)] = replacedPath;
       delete config.entry[entryName];
     });
 
@@ -109,10 +109,10 @@ function processWebpackThemeConfig(themeConfig, theme, vars) {
         after: {
           root: './dist',
           include: [
-            `xmzbase.${theme}.js`,
-            `xmzbase.${theme}.js.map`,
-            `xmzbase.${theme}.min.js`,
-            `xmzbase.${theme}.min.js.map`,
+            `pmbase.${theme}.js`,
+            `pmbase.${theme}.js.map`,
+            `pmbase.${theme}.min.js`,
+            `pmbase.${theme}.min.js.map`,
           ],
           log: false,
           logWarning: false,

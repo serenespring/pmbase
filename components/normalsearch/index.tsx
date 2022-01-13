@@ -1,37 +1,29 @@
-/**
- * 搜索table
- * author: serenespring
- * date: 2021-01-10
- */
+
 import React, { useState } from 'react';
-import { Form, Row, Col, Select, Input, Button, Table, Card, DatePicker } from 'antd';
+import { Form, Row, Col, Select, Input, Button, Card, DatePicker } from 'antd';
 import { DownOutlined, UpOutlined } from '@ant-design/icons';
 
 const { Option } = Select;
 
-
-const SearchTable = (props: any) => {
-  const { columns = [], onSearch = () => { }, dataSource = [], isRowSelection = false, isExport = false, doExport = () => { }, ...tableProps } = props;
+const NormalSearch = (props: any) => {
   const [expand, setExpand] = useState(false);
-  const [selectedRowKeys, setSelectedRowKeys] = useState([]);
+  const { columns, onSearch = () => { } } = props;
   const [form] = Form.useForm();
-  const searchColumns = columns.filter((item: { isSearch: boolean }) => !(item.isSearch === false));
-
   const getFields = () => {
-    const newSearchColumns = expand ? searchColumns : (searchColumns.length > 6 ? searchColumns.slice(0, 6) : searchColumns)
+    const newColumns = expand ? columns : (columns.length > 6 ? columns.slice(0, 6) : columns)
     const children = [];
-    for (let i = 0; i < newSearchColumns.length; i++) {
+    for (let i = 0; i < newColumns.length; i++) {
 
-      switch (newSearchColumns[i].valueType) {
+      switch (newColumns[i].valueType) {
         case "select":
           children.push(
             <Col span={8} key={i}>
               <Form.Item
-                name={newSearchColumns[i]?.dataIndex}
-                label={newSearchColumns[i]?.title}
+                name={newColumns[i]?.name}
+                label={newColumns[i]?.label}
               >
                 <Select
-                  placeholder={`请选择${newSearchColumns[i]?.title}`}
+                  placeholder={`请选择${newColumns[i]?.label}`}
                   allowClear showSearch
                   filterOption={(input, option) => {
                     const text = Array.isArray(option?.children) ? option?.children.join() : option?.children;
@@ -41,7 +33,7 @@ const SearchTable = (props: any) => {
                   }}
                 >
                   {
-                    newSearchColumns[i]?.valueData.map((item1: any) => (
+                    newColumns[i]?.valueData.map((item1: any) => (
                       <Option key={item1.key} value={item1.key}>{item1.value}</Option>
                     ))
                   }
@@ -54,8 +46,8 @@ const SearchTable = (props: any) => {
           children.push(
             <Col span={8} key={i}>
               <Form.Item
-                name={newSearchColumns[i]?.dataIndex}
-                label={newSearchColumns[i]?.title}
+                name={newColumns[i]?.name}
+                label={newColumns[i]?.label}
               >
                 <DatePicker />
               </Form.Item>
@@ -66,10 +58,10 @@ const SearchTable = (props: any) => {
           children.push(
             <Col span={8} key={i}>
               <Form.Item
-                name={newSearchColumns[i]?.dataIndex}
-                label={newSearchColumns[i]?.title}
+                name={newColumns[i]?.name}
+                label={newColumns[i]?.label}
               >
-                <Input placeholder={`请输入${newSearchColumns[i]?.title}`} />
+                <Input placeholder={`请输入${newColumns[i]?.label}`} />
               </Form.Item>
             </Col>,
           );
@@ -77,26 +69,9 @@ const SearchTable = (props: any) => {
     }
     return children;
   };
-
   const onFinish = (values: {}) => {
     onSearch(values);
   };
-
-  const onSelectChange = (selectedKeys: []) => {
-    setSelectedRowKeys(selectedKeys);
-  }
-
-  const rowSelection = {
-    selectedRowKeys,
-    onChange: onSelectChange,
-  };
-
-  const onExport = () => {
-    doExport(selectedRowKeys)
-  }
-
-
-
   return (
     <Card>
       <Form
@@ -115,7 +90,6 @@ const SearchTable = (props: any) => {
               style={{ margin: '0 0 0 8px' }}
               onClick={() => {
                 form.resetFields();
-                setSelectedRowKeys([]);
                 onSearch()
               }}
             >
@@ -127,25 +101,12 @@ const SearchTable = (props: any) => {
                 setExpand(!expand);
               }}
             >
-              {searchColumns.length > 6 ? <>{expand ? <UpOutlined /> : <DownOutlined />} {expand ? '收起' : '展开'}</> : ''}
+              {columns.length > 6 ? <>{expand ? <UpOutlined /> : <DownOutlined />} {expand ? '收起' : '展开'}</> : ''}
             </a>
           </Col>
         </Row>
       </Form>
-      <div style={{ marginTop: '20px' }}>
-        {isExport &&
-          <div style={{ textAlign: 'right' }}>
-            <Button type="primary" onClick={onExport}>导出</Button>
-          </div>
-        }
-        {
-          isRowSelection ? <Table columns={columns} dataSource={dataSource} rowSelection={rowSelection} pagination={{ position: ['bottomCenter'] }} {...tableProps} /> :
-            <Table columns={columns} dataSource={dataSource} pagination={{ position: ['bottomCenter'] }} {...tableProps} />
-        }
-
-      </div>
     </Card>
-  )
+  );
 }
-
-export default SearchTable
+export default NormalSearch

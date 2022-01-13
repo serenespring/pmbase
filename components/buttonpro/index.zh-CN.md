@@ -5,6 +5,7 @@ type: 通用
 cols: 1
 title: ButtonPro
 subtitle: 按钮
+cover: https://gw.alipayobjects.com/zos/alicdn/fNUKzY1sk/Button.svg
 ---
 
 对按钮进行二次封装

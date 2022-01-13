@@ -298,7 +298,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
             // </Button>,
             // <More key="more" {...sharedProps} />,
             // <Github key="github" responsive={responsive} />,
-            <a href="https://github.com/serenespring/xmzbase.git" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://github.com/serenespring/pmbase.git" target="_blank" rel="noopener noreferrer">GitHub</a>
           ];
 
           if (windowWidth < RESPONSIVE_XS) {

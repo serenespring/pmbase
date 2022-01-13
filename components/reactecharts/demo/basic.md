@@ -13,9 +13,8 @@ title:
 ## en-US
 
 ````jsx
-import { message } from 'antd';
 import React from 'react';
-import { ReactECharts } from 'xmzbase';
+import { ReactECharts } from 'pmbase';
 
 const Demo = ()=>{
   const option = {

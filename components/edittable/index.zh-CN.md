@@ -4,6 +4,7 @@ type: 数据展示
 cols: 1
 title: EditTable
 subtitle: 编辑表格
+cover: https://gw.alipayobjects.com/zos/alicdn/f-SbcX2Lx/Table.svg
 ---
 
 ## API

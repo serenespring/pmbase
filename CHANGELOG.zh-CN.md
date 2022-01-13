@@ -15,12 +15,18 @@ timeline: true
 
 ---
 
+## 1.0.2
+
+`2020-01-13`
+
+🎉 NormalSearch组件 
+
 ## 1.0.1
 
 `2020-01-12`
 
-* botton 组件封装
-* icon 组件封装
+* ButtonPro 组件封装
+* IconPro 组件封装
 * EditTable 组件封装
 * SearchTable 组件封装
 * ReactEcharts 组件封装
@@ -29,4 +35,4 @@ timeline: true
 
 `2020-01-10`
 
-🎉 初始化xmzbase
+🎉 初始化pmbase

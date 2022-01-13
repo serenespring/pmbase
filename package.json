@@ -1,5 +1,5 @@
 {
-  "name": "xmzbase",
+  "name": "pmbase",
   "version": "1.0.1",
   "description": "base on antd component",
   "keywords": [
@@ -10,7 +10,7 @@
   "author": "serenespring",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/serenespring/xmzbase.git"
+    "url": "git+https://github.com/serenespring/pmbase.git"
   },
   "license": "ISC",
   "files": [
@@ -306,9 +306,9 @@
     "mode": "npm"
   },
   "bugs": {
-    "url": "https://github.com/serenespring/xmzbase/issues"
+    "url": "https://github.com/serenespring/pmbase/issues"
   },
-  "homepage": "https://github.com/serenespring/xmzbase#readme",
+  "homepage": "https://github.com/serenespring/pmbase#readme",
   "directories": {
     "doc": "docs",
     "lib": "lib",

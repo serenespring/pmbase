@@ -4,6 +4,7 @@ type: 通用
 cols: 1
 title: IconPro
 subtitle: 图标
+cover: https://gw.alipayobjects.com/zos/alicdn/rrwbSt3FQ/Icon.svg
 ---
 
 
