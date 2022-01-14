@@ -11,7 +11,7 @@ const { Option } = Select;
 
 
 const SearchTable = (props: any) => {
-  const { columns = [], onSearch = () => { }, dataSource = [], isRowSelection = false, isExport = false, doExport = () => { }, ...tableProps } = props;
+  const { columns = [], onSearch = () => { }, dataSource = [], isRowSelection = false,  actionRender = () => { }, ...tableProps } = props;
   const [expand, setExpand] = useState(false);
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
   const [form] = Form.useForm();
@@ -91,10 +91,6 @@ const SearchTable = (props: any) => {
     onChange: onSelectChange,
   };
 
-  const onExport = () => {
-    doExport(selectedRowKeys)
-  }
-
 
 
   return (
@@ -133,11 +129,9 @@ const SearchTable = (props: any) => {
         </Row>
       </Form>
       <div style={{ marginTop: '20px' }}>
-        {isExport &&
-          <div style={{ textAlign: 'right' }}>
-            <Button type="primary" onClick={onExport}>导出</Button>
-          </div>
-        }
+        <div style={{ textAlign: 'right' }}>
+          {actionRender(selectedRowKeys)}
+        </div>
         {
           isRowSelection ? <Table columns={columns} dataSource={dataSource} rowSelection={rowSelection} pagination={{ position: ['bottomCenter'] }} {...tableProps} /> :
             <Table columns={columns} dataSource={dataSource} pagination={{ position: ['bottomCenter'] }} {...tableProps} />

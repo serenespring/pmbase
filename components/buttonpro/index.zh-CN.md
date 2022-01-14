@@ -1,5 +1,4 @@
 ---
-order: 0
 category: Components
 type: 通用
 cols: 1

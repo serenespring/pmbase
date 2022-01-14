@@ -5,5 +5,6 @@ export { default as EditTable } from './edittable';
 export { default as ReactECharts } from './reactecharts';
 export { default as IconPro } from './iconpro';
 export { default as NormalSearch } from './normalsearch';
+export { default as DescriptionsPro } from './descriptionspro';
 
 export { default as version } from './version';

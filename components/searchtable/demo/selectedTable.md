@@ -16,6 +16,7 @@ title:
 
 ````jsx
 import React, { useState } from 'react';
+import {Button} from 'antd';
 import { SearchTable } from 'pmbase';
 
 const columns = [
@@ -84,13 +85,14 @@ const Demo = ()=>{
       dataSource={data} 
       onSearch={onSearch} 
       isRowSelection
-      isExport
-      doExport={doExport}
+      actionRender={(selectedRowKeys) => [
+        <Button key="out" onClick={()=>{doExport(selectedRowKeys)}}>
+          导出
+        </Button>,
+      ]}
     />
   )
 }
-
-
 
 ReactDOM.render(
   <Demo />,

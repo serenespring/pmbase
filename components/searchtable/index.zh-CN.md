@@ -19,8 +19,7 @@ subtitle: 查询表格
 | isExport | 可否导出 | boolean | - |
 | onSearch | 搜索框数据 | function | - |
 | isRowSelection | 表格行是否可选 | boolean | - |
-| isExport | 是否展示导出按钮 | boolean | - |
-| doExport | 导出函数 | function | - |
+| actionRender | 操作信息 | function | - |
 
 
 

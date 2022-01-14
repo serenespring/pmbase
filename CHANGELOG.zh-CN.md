@@ -17,13 +17,15 @@ timeline: true
 
 ## 1.0.2
 
-`2020-01-13`
+`2022-01-14`
 
-🎉 NormalSearch组件 
+* NormalSearch 组件
+* DescriptionsPro 组件
+* SearchTable 优化 
 
 ## 1.0.1
 
-`2020-01-12`
+`2022-01-12`
 
 * ButtonPro 组件封装
 * IconPro 组件封装
@@ -33,6 +35,6 @@ timeline: true
 
 ## 1.0.0
 
-`2020-01-10`
+`2022-01-10`
 
 🎉 初始化pmbase
