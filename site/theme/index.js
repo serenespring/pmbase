@@ -58,18 +58,18 @@ module.exports = {
     component: './template/Layout/index',
     indexRoute: { component: homeTmpl },
     childRoutes: [
-      {
-        path: 'app-shell',
-        component: appShellTmpl,
-      },
+      // {
+      //   path: 'app-shell',
+      //   component: appShellTmpl,
+      // },
       {
         path: 'index-cn',
         component: redirectTmpl,
       },
-      {
-        path: 'docs/react/:children',
-        component: redirectTmpl,
-      },
+      // {
+      //   path: 'docs/react/:children',
+      //   component: redirectTmpl,
+      // },
       {
         path: 'changelog',
         component: contentTmpl,
@@ -82,30 +82,30 @@ module.exports = {
         path: 'components',
         component: redirectTmpl,
       },
-      {
-        path: 'components/form/v3',
-        component: contentTmpl,
-      },
-      {
-        path: 'components/form/v3-cn',
-        component: contentTmpl,
-      },
+      // {
+      //   path: 'components/form/v3',
+      //   component: contentTmpl,
+      // },
+      // {
+      //   path: 'components/form/v3-cn',
+      //   component: contentTmpl,
+      // },
       {
         path: 'components/:children/',
         component: contentTmpl,
       },
-      {
-        path: 'docs/spec/:children',
-        component: contentTmpl,
-      },
-      {
-        path: 'docs/resources',
-        component: resourcesTmpl,
-      },
-      {
-        path: 'docs/resources-cn',
-        component: resourcesTmpl,
-      },
+      // {
+      //   path: 'docs/spec/:children',
+      //   component: contentTmpl,
+      // },
+      // {
+      //   path: 'docs/resources',
+      //   component: resourcesTmpl,
+      // },
+      // {
+      //   path: 'docs/resources-cn',
+      //   component: resourcesTmpl,
+      // },
     ],
   },
 };
